@@ -1,0 +1,84 @@
+recycle view 
+card view
+android x
+adapater
+fragement
+api crud : https://www.youtube.com/watch?v=qwDjMWvvL5o&list=PLc3OjfRG7xktnDSJcO-4Alfp0_T-PcX0-
+card view: 
+https://www.youtube.com/watch?v=yOZFId3uOrs
+https://www.youtube.com/watch?v=VUPM387qyrw&t=10s
+splash screen
+menu: https://www.youtube.com/watch?v=fGcMLu1GJEc&vl=en
+fragment: https://www.youtube.com/watch?v=hr6yk6JKK8w
+ripple: https://www.youtube.com/watch?v=3P92BKsrS9k&list=PLkyGuIcLcmx0jiHcv_dps5wKMKjiI1AuD&index=23
+xml : http://shapes.softartstudio.com/
+splash: https://www.youtube.com/watch?v=pMo-x1QzzLs
+slide : https://www.youtube.com/watch?v=R_AIUy7tFVA&list=PLUu5dK1pEfFexQlAskbONchfE55Wi0Sfp&index=16&t=0s
+slider: https://www.youtube.com/watch?v=aLErFYrvkeE&list=PLUu5dK1pEfFexQlAskbONchfE55Wi0Sfp&index=28&t=0s
+bottom menu : https://www.youtube.com/watch?v=BuypfX010yc&list=PLUu5dK1pEfFexQlAskbONchfE55Wi0Sfp&index=29
+swipe delete : https://www.youtube.com/watch?v=rcSNkSJ624U
+call list: https://www.youtube.com/watch?v=AkiltTv0CjA
+whatsapp mobile design 
+tv create
+email
+payment gateway
+
+
+
+rules:
+
+set all apps permission
+set all apps package
+set all image size with folder access
+
+
+
+
+
+Project:
+
+
+
+
+step:
+
+1. layout with drawer
+    slider
+	English 
+	bangla
+	login
+	loader
+	database & api (cat, title , des, path, status)
+	
+2. In english (show data from api , put file in server, video player), on scroll load, slpah,
+
+3. login (attempt check) firebase, update profile ( picture upload & camera access ),login with fb
+    
+4. contact us (send email)
+	
+5. add to wish list
+
+6. search by movie name
+
+7. get current location 
+
+8. subscription payment stripe 
+
+9. send us feedback 
+      api post
+	  
+13.report pie all new movies
+
+15.push notification after new movie set
+
+16. update your apps
+
+18. alerm vibration
+
+17. play store upload
+
+   firebase when use, limitation, firebase then preference?, firebase sink with api, jwt, if api user need in firebase
+   list adapter, admin apps & client apss links, apps version update
+
+
+14.tv like jago
