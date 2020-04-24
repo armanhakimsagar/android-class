@@ -1,0 +1,21 @@
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+
+* Now create AsyncTask thread. (thread is something that allow us to do multiple task.)	
+
+  It have 2 method. Doing background (it will work for network call) & post execute (it will work when api call done). 
+
+
+
+public class jsonTask extends AsyncTask<String,String,String> {
+
+	@Override
+	protected String doInBackground(String... strings) {
+		return null;
+	}
+
+	@Override
+	protected void onPostExecute(String s) {
+		super.onPostExecute(s);
+	}
+}

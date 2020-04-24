@@ -1,3 +1,4 @@
+getter setter & gmt time
 recycle view 
 card view
 android x
@@ -22,6 +23,30 @@ whatsapp mobile design
 tv create
 email
 payment gateway
+playstore app violation rules & complain system & certified by google
+play store apps update
+allow back up in andorid app (for retrive previous data after uninstall) 
+image variation set
+all about app version & permission
+andriod broadcast receiver(system broadcast)
+android service 
+content provider apps to apps data share
+xml design
+handle apps not response error
+shared preference & bundle data save
+sqllite
+chat apps
+video call
+example intrument test (tdd apps)
+all about graddle
+multiple language app by string.xml file & bangla language
+on scroll effect
+details sdk tools
+githab open source project links for rnd
+all layout details
+all text property details
+
+
 
 
 
@@ -30,8 +55,7 @@ rules:
 set all apps permission
 set all apps package
 set all image size with folder access
-
-
+set api permission from any link & allow all size of image in andorid manifest file
 
 
 
