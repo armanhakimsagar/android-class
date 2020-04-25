@@ -1,0 +1,9 @@
+* Relative layout depends on parent element. Its a free style layout.
+
+* You can add thoes attribute:
+
+   android:layout_toRightOf="@+id/textView5"
+
+* You can drag & replace element as you want in relative layout. just uncheck magnet icon on top.
+
+  now drag & drop as you want.

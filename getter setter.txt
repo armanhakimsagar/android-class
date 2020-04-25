@@ -1,0 +1,37 @@
+* its a java file for get & set data.
+
+* create student.java file
+
+	public class studends {
+
+		public String name;
+
+
+	}
+
+
+* press alt + insert & create getter setter.
+
+  it will insert this:
+  
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+* now use getter setter by :
+
+	Studend studends = new studends();
+	
+	i.putExtra("id",studends.setName('Alam'));
+
+
+	studends.getName();
+		
+		
+* 

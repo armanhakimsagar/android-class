@@ -1,0 +1,13 @@
+* You can use string xml file for multiple language support.
+
+
+
+
+* for define array in string.xml
+
+<string-array name="system">
+    
+	<item>@string/earth</item>
+    <item>@string/moon</item>
+
+</string-array>

@@ -1,0 +1,32 @@
+https://www.tutorialspoint.com/android/android_acitivities.htm
+
+
+on create : connect & draw view file
+
+on start : visible view in front of us
+
+on resume : apps will be fully running after that state
+
+____
+
+on pulse : when any alert come in front of apps. like: connect charger
+
+_____
+
+on stop : when apps not visible in front of you.
+
+on restart : when open after close
+
+on resume : apps will be fully running after that state, here start will be skipped
+
+_____
+
+on destroy : 
+		
+		if we press back button, pulse -> stop -> destroy
+		if system destroy apps
+		if you rotate screen
+		
+________
+
+suppose you need gps connection. you can disconnect it in stop & start connection in on resume.

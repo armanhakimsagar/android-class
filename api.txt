@@ -3,19 +3,88 @@
 
 * Now create AsyncTask thread. (thread is something that allow us to do multiple task.)	
 
-  It have 2 method. Doing background (it will work for network call) & post execute (it will work when api call done). 
+  It have 3 method. on pre execute , Doing background (it will work for network call) & post execute (it will work when api call done). 
+
+  String,String,String = param , progress , result
 
 
 
-public class jsonTask extends AsyncTask<String,String,String> {
 
-	@Override
-	protected String doInBackground(String... strings) {
+
+protected String doInBackground(String... strings) {
+
+	HttpURLConnection httpURLConnection = null;
+	BufferedReader bufferedReader = null;
+	String name;
+	Integer age;
+	String description;
+	try {
+		URL url = new URL("https://sobujayon.com/api.json");
+		httpURLConnection = (HttpURLConnection) url.openConnection();
+		InputStream inputStream = httpURLConnection.getInputStream();
+		bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+		StringBuffer stringBuffer=new StringBuffer();
+		String line= "";
+		StringBuffer lastBuffer = new StringBuffer();
+		while((line=bufferedReader.readLine()) != null){
+
+			stringBuffer.append(line);
+
+		}
+		String file = stringBuffer.toString();
+
+		JSONObject fileObject1 = new JSONObject(file);
+
+		JSONObject fileObject2 = new JSONObject(file);
+
+
+		String status = fileObject1.getString("status");
+
+		Log.d("data1",Boolean.toString(status == "success"));
+		Log.d("data2",status);
+		Log.d("data3","success");
+
+		if(status == "success") {
+			JSONArray jsonArray = fileObject2.getJSONArray("data");
+
+
+			for(int i=0; i<jsonArray.length(); i++) {
+				JSONObject arrayObject = jsonArray.getJSONObject(i);
+				name = arrayObject.getString("employee_name");
+				int salary = arrayObject.getInt("employee_salary");
+				age = arrayObject.getInt("employee_age");
+
+				lastBuffer.append(name+" "+salary+" "+age+"\n");
+			}
+			return  lastBuffer.toString();
+
+		}
+
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		} finally {
+			httpURLConnection.disconnect();
+			try {
+				if(bufferedReader != null) {
+					bufferedReader.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
 		return null;
-	}
-
-	@Override
-	protected void onPostExecute(String s) {
-		super.onPostExecute(s);
-	}
 }
+
+@Override
+protected void onPostExecute(String s) {
+	super.onPostExecute(s);
+	apiData.setText(s);
+}
+
+
+

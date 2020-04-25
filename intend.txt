@@ -1,0 +1,47 @@
+** you can pass data by intend first java file:
+
+
+Intent i = new Intent(SourceActiviti.this,TargetActivity.class);
+
+i.putExtra("id","string data");
+
+startActivity(i)
+
+
+
+Get data in 2nd java file :
+
+
+Intent i = new Intent(SourceActiviti.this,TargetActivity.class);
+
+String strData = i.getStringExtra("id");
+
+
+** you can set dial pad in intends (you can send Alarm Clock
+Camera
+Calendar
+Contacts / People
+Email
+File Storage
+Maps
+Music / Video
+Phone Dialler
+Settings
+Text Messaging
+Web browsing)
+
+https://developer.android.com/guide/components/intents-common
+
+uses-permission android:name="android.permission.CALL_PHONE"
+
+// check resolveActivity if that return any false value.
+
+final ComponentName componentName = intent.resolveActivity(pm);
+if (componentName != null) {
+  try {
+    context.startActivity(intent);    
+  } catch (ActivityNotFoundException ex) {
+    // Notify the user?
+  }
+}
+
