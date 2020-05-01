@@ -1,3 +1,6 @@
+* ********************* RAW API FETCH
+
+
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 
@@ -20,10 +23,18 @@ protected String doInBackground(String... strings) {
 	String description;
 	try {
 		URL url = new URL("https://sobujayon.com/api.json");
+		
+		// for use connection
 		httpURLConnection = (HttpURLConnection) url.openConnection();
+		
+		// fetch data
 		InputStream inputStream = httpURLConnection.getInputStream();
+		
+		// render data in string
+		
 		bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
 		StringBuffer stringBuffer=new StringBuffer();
+		
 		String line= "";
 		StringBuffer lastBuffer = new StringBuffer();
 		while((line=bufferedReader.readLine()) != null){
@@ -88,3 +99,25 @@ protected void onPostExecute(String s) {
 
 
 
+
+
+* ********************* VOLLEY API LIBRARY USE
+
+
+
+    implementation 'com.android.volley:volley:1.1.0'
+	
+
+
+	For json perse follow this:
+	
+	https://stackoverflow.com/questions/9605913/how-do-i-parse-json-in-android
+	
+	
+	
+https://www.youtube.com/playlist?list=PLT3-dzFEBix1HZJFkMFEOw7e9hR0qUE0D
+https://www.youtube.com/watch?v=jNa4nbb1Kac
+https://www.youtube.com/watch?v=wzK19AaEgzk
+https://www.youtube.com/watch?v=zkiGwNiSKLI
+https://www.youtube.com/watch?v=7_fl-QtMi54
+https://www.youtube.com/watch?v=sbI55IOiQdE

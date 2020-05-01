@@ -1,0 +1,152 @@
+Top floating menu:
+
+1. create a menu:
+	android resource file -> resource type (menu)
+	
+2. add this link for support both app & android:
+
+   <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:calculator="http://schemas.android.com/apk/res-auto" >
+    
+	
+3. ShowAsAction always for show it in top in action bar. Its click button for drop down:
+
+	<item android:id="@+id/action_search"
+        android:icon="@drawable/abc_vector_test"
+        android:title="click_me"
+        calculator:showAsAction="always"  />
+	  
+4. Drop down item:
+
+	<item android:id="@+id/home"
+        android:title="Home"
+        calculator:showAsAction="never"  />
+
+    <item android:id="@+id/login"
+        android:title="Login"
+        calculator:showAsAction="never"  />
+		
+		
+5. Create group for seperate layer:
+
+   <group>
+        <item android:id="@+id/Settings"
+            android:title="Settings"
+            calculator:showAsAction="never"  />
+    </group>
+	
+	
+6. For add this method for show many any specific activity:
+
+   public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.top_menu, menu);
+        return true;
+    }
+	
+7. add this method for what will happen after click ( Its run time ):
+
+	@Override
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+
+		//noinspection SimplifiableIfStatement
+		if (id == R.id.login) {
+			Intent i = new Intent(MainActivity.this,LoginActivity.class);
+
+			i.putExtra("id","string data");
+
+			startActivity(i);
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+	
+	
+8. For on run time change menu ( Suppose login or logout button check):
+
+   @Override
+
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        MenuItem login = menu.findItem(R.id.login);
+        MenuItem logout = menu.findItem(R.id.logout);
+		
+        if(isLoginedIn){
+            login.setVisible(false);
+            logout.setVisible(true);
+        }else{
+            logout.setVisible(false);
+            login.setVisible(true);
+        }
+        
+		return super.onPrepareOptionsMenu(menu);
+    }
+	
+
+
+
+
+
+_____________________________
+
+
+Popup menu:
+
+
+** Design :
+
+	<?xml version="1.0" encoding="utf-8"?>
+
+	<menu xmlns:android="http://schemas.android.com/apk/res/android">
+		<item android:id="@+id/mail"
+			android:icon="@drawable/ic_mail"
+			android:title="@string/mail" />
+		<item android:id="@+id/upload"
+			android:icon="@drawable/ic_upload"
+			android:title="@string/upload"
+			android:showAsAction="ifRoom" />
+		<item android:id="@+id/share"
+			android:icon="@drawable/ic_share"
+			android:title="@string/share" />
+	</menu>
+
+
+** Button:
+
+   <Button
+    android:id="@+id/btnShow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Show Popup Menu"
+    android:onClick="showPopup" />
+	
+	
+** click event on popup button
+
+public void showMenu(View v) {
+
+    PopupMenu popup = new PopupMenu(this, v);
+    popup.setOnMenuItemClickListener(this);
+    popup.inflate(R.menu.actions);
+    popup.show();
+
+}
+
+@Override
+
+public boolean onMenuItemClick(MenuItem item) {
+
+    switch (item.getItemId()) {
+        case R.id.archive:
+            archive(item);
+            return true;
+        case R.id.delete:
+            delete(item);
+            return true;
+        default:
+            return false;
+    }
+
+}

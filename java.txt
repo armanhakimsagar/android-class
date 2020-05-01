@@ -1,0 +1,45 @@
+* you can not run only java in android studio
+
+* class name must be pascel case PascaleCase & noun
+  variable name must be camel case & noun
+  method name will be verb & camel case
+  
+* must have a main method & must need return data type type.
+  
+* Variable name:
+
+  must need encapsulation, datatype & value;
+  
+  private String personName = "kuddus";
+  
+  
+* data type: https://www.w3schools.com/java/java_data_types.asp
+
+* static method access by dot, static method can access static variable.
+
+  public class HelloWorld{
+     public static String personName = "kuddus";
+
+     public static void main(String []args){
+         
+        System.out.println(HelloWorld.personName);
+     }
+  }
+  
+  
+  
+  public class HelloWorld{
+
+     public static String personName = "kuddus";
+
+     public static void main(String []args){
+         
+       System.out.println(HelloWorld.myName());
+       
+     }
+     public static String myName(){
+         
+       return HelloWorld.personName;
+       
+     }
+  }

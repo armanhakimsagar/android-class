@@ -1,0 +1,76 @@
+1. its xml file
+2. data will be lost if cache clear or uninstall
+3. use for login, cart, theme settings
+
+_____
+
+public static final String MyPREFERENCES = "MyPrefs" ;
+public static final String Name = "nameKey";
+public static final String Phone = "phoneKey";
+public static final String Email = "emailKey";
+
+
+SharedPreferences sharedpreferences;
+
+
+_____
+
+ed1=(EditText)findViewById(R.id.editText);
+ed2=(EditText)findViewById(R.id.editText2);
+ed3=(EditText)findViewById(R.id.editText3);
+
+SharedPreferences preferences = getSharedPreferences("AUTHENTICATION_FILE_NAME", MODE_PRIVATE);
+SharedPreferences.Editor editor = preferences.edit();
+editor.putString("Authentication_Id","Arman");
+editor.putString("Authentication_Password","1234");
+editor.putString("Authentication_Status","true");
+editor.apply();
+
+
+_____
+
+
+String n  = ed1.getText().toString();
+String ph  = ed2.getText().toString();
+String e  = ed3.getText().toString();
+
+SharedPreferences.Editor editor = sharedpreferences.edit();
+
+editor.putString(Name, n);
+editor.putString(Phone, ph);
+editor.putString(Email, e);
+editor.commit();
+
+_____
+
+
+Example code:
+
+after menu item click set onOptionsItemSelected in main activity.
+get id value then compare then putString then reload page.
+ 
+
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+	int id = item.getItemId();
+	Log.d("keey", String.valueOf(id));
+	if (id == R.id.login) {
+		SharedPreferences preferences = getSharedPreferences("AUTHENTICATION_FILE_NAME", MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString("Authentication_Id","Arman");
+		editor.putString("Authentication_Password","1234");
+		editor.putString("Authentication_Status","true");
+		editor.apply();
+	}
+	if(id == R.id.logout){
+		SharedPreferences preferences = getSharedPreferences("AUTHENTICATION_FILE_NAME", MODE_PRIVATE);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.clear();
+		editor.commit();
+	}
+
+	Intent i = new Intent(MainActivity.this,MainActivity.class);
+	startActivity(i);
+
+	return super.onOptionsItemSelected(item);
+}
