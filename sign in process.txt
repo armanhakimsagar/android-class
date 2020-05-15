@@ -1,0 +1,11 @@
+1. firebase email registration
+2. firebase custom field add
+3. registion validation
+4. after firebase pass data to web api
+5. when login check firebase data
+6. additional feature : progress bar, animation , login button disable
+7. sign in with facebook
+8. forgot password (send email, )
+9. already sign in goto direct dashboad page
+10.customize back key
+11.shared preference

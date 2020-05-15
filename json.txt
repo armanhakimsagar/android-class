@@ -1,0 +1,11 @@
+link :
+
+implementation 'com.google.code.gson:gson:2.8.6'
+
+convert:
+
+object Object = new Gson;
+String data = object.toJson(object);
+
+After that you can share preferance data.
+
