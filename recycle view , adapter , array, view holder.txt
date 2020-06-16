@@ -1,3 +1,19 @@
+Custom view Adapter life circle:
+
+1. create child component (list_item.xml)
+
+2. create model
+
+3. create ArrayAdapter link here model with child component
+
+4. now in mainActivity call ArrayAdapter & pass data in arrayAdapter.
+
+For show api data you can use array or recycle (recycle is best):
+
+Array adapter: https://medium.com/mindorks/custom-array-adapters-made-easy-b6c4930560dd
+recycle view : https://www.tutorialspoint.com/how-can-i-make-a-horizontal-listview-in-android
+
+
 Full life curcle:
 
 1. recycle view in activity main .xml
@@ -13,6 +29,8 @@ string.xml array -> main activity pass data to adapter reference by recycle view
 															my view holder -> get array by findViewById
 															
 															onblinviewholder -> set text data to row view file
+															
+															
 										
 	
 
@@ -21,18 +39,69 @@ string.xml array -> main activity pass data to adapter reference by recycle view
 
 adapter: that control child , parent component & data source.
 		 it loop with every data source with child component & create a new view (it call view holder).
-		 Now view holder push that view to parent component
+		 Now view holder push that view to parent component.
 		 
+		*** Simple Life cycle:
+		 				 
+			
+			// create a array
+			
+			ArrayList<String> grocery = new ArrayList<>();
+			grocery.add("Bhindi");
+			grocery.add("Pen");
+			grocery.add("Apples");
+			grocery.add("Tea Leaves");
+			
+			// now create a adapter to pass data in layout.xml from java array :
+
+			ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, grocery);
+			
+			// now set this adapter with list view :
+			
+			myListView.setAdapter(arrayAdapter);
+				 
+	
 	
 recycle view : package of create all type of view. it can control large amount of data. 
 				
 			   It have 5 methods.
+			   
 			   constructor : initialize all item which will be show.
+			   
 			   viewholder : find all component from child view
 			   
+			   getItemCount : return total child component it created
+			   
+			   onblinviewholder : bind data with child component
+			   
+			   on create view holder: its a method for create inflate (get accessable) of view file
 			   
 			   
-			   
+Linear layout manager: how view will show to parent component. Lineat horizontal or vertical etc.
+						you can setorientation to horizontal, or Gridlayoutmanager or stragegridlayoutmanager.
+
+
+Steps:
+
+1. add dependency of recycler view & card view in griddle
+
+2. create recycle view in activity main xml file (parent view)
+
+3. create card view in new file. (child view)
+
+4. create a new class named myviewholder. now extends Recyclerview.viewholder .
+   this view holder file hold child component.
+   
+5. create a new class named myadapter. now extends Recyclerview.adapter & pass myviewholder as param
+   
+   now initailize context & array & create a constructor method.
+   
+   
+   
+
+
+
+
 
 https://www.youtube.com/channel/UC_Fh8kvtkVPkeihBs42jGcA/playlists
 

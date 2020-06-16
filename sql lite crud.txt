@@ -1,0 +1,52 @@
+follow this code : https://devofandroid.blogspot.com/2018/03/custom-listview-using-sqlite-crud.html
+
+
+Step :
+
+1. create SQLiteHelper class for crud methods (Insert, delete, update, view).
+   create database connection in there.
+   after onclick pass data in this class by model.
+
+2. create a model for getter & setter
+
+3. after onclick insert data : 
+	
+	in main activity :
+	
+	mSQLiteHelper.insertData(
+		mEdtName.getText().toString().trim(),
+		mEdtAge.getText().toString().trim(),
+		mEdtPhone.getText().toString().trim(),
+		imageViewToByte(mImageView)
+	);
+	
+	in sqllitehelper.php
+	
+	public void insertData(String name, String age, String phone, byte[] image){
+        SQLiteDatabase database = getWritableDatabase();
+     
+	 String sql = "INSERT INTO RECORD VALUES(NULL, ?, ?, ?, ?)"; //where "RECORD" is table name in database we will create in mainActivity
+
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+
+        statement.bindString(1, name);
+        statement.bindString(2, age);
+        statement.bindString(3, phone);
+        statement.bindBlob(4, image);
+
+        statement.executeInsert();
+    }
+
+
+__________________
+
+
+
+For view:
+
+1. create child component
+
+2. create parent component
+
+3. create adapter

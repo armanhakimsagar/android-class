@@ -1,0 +1,13 @@
+3 step:
+
+1. we will use view pager for slider. it helps to slide.
+   take a view pager in parent component.
+   
+2. now take child view & set image view in here.
+
+3. now take a view adapter & inflate child component in adapter.
+   now set apdapter with parent component in main activity.
+   
+https://www.youtube.com/watch?v=1AS5HcXPpqk
+
+https://github.com/hackstarsj/Android_Image_Slider   

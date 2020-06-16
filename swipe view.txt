@@ -1,0 +1,93 @@
+* swipe delete package like facebook :
+
+very easy follow this facebook : https://www.youtube.com/watch?v=2aKL0qw4BVg
+
+
+__________________
+
+
+
+
+Swipe views allow you to navigate between sibling screens, 
+such as tabs, with a horizontal finger gesture, or swipe.
+************ Basic rules **********
+
+How to implement :
+
+* Add the following class to your project: SwipeRevealLayout.java
+
+* Adjust your layout code for your RecyclerView ViewHolder and add the SwipeRevealLayout component as the container for both the 
+  
+  top and bottom layer of your RecyclerView Item. For an example of how to set it up: list_item_main.xml. 
+  
+  (link SwipeRevealLayout with child component in viewHolder)
+
+
+* Make sure to use ‘wrap_content’ or a predefined width for your child component. 
+
+* If you are adding a clickable function on the child component, 
+ 
+  ensure the top layer has android:clickable=”true” otherwise clicks for the bottom layer components will still trigger when you click on the top layer.
+
+* Optional: You can define what edge you want to drag from. By default, it will drag from the left, 
+
+  in the example project I defined it to drag from the right. Specify it with ‘app:dragFromEdge=”<edge to drag from>”’
+
+  when specifying the attributes for the SwipeRevealLayout 
+
+
+
+
+
+*********** Code details **********
+
+To implement swipe to delete and undo in our RecyclerView we are going to need 3 key components:
+
+
+
+* ItemTouchHelper: This attaches to the RecyclerView and watches for swipes. (attach swipe object with recyclerView)
+
+* ItemTouchHelper.SimpleCallback : This is passed into ItemTouchHelper’s constructor and contains the code that will run once the item is swiped. (what will happen after recyclerView)
+
+* Snackbar: This is triggered once an item is deleted and gives the user the option to undo the delete. (undo action)
+
+
+
+
+** swipe using ItemTouchHelper.SimpleCallback : 
+
+	
+	
+
+** swipe using ItemTouchHelper : 
+
+Using ItemTouchHelper Callback we need to implement three methods to make this work.
+	
+	
+	* we need to attach helper to RecyclerView. To do this we are adding it to the MainActivity class using attachToRecyclerView method :
+	
+		// MainActivity.java
+		
+		SwipeController swipeController = new SwipeController();
+		ItemTouchHelper itemTouchhelper = new ItemTouchHelper(swipeController);
+		itemTouchhelper.attachToRecyclerView(recyclerView);
+		
+	
+	* getMovementFlags :  tells helper what kind of actions RecyclerView should handle — in our example just swiping left and right
+	
+		public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+			return makeMovementFlags(0, LEFT | RIGHT);
+		}
+		
+		
+	* convertToAbsoluteDirection: we are able to swipe out the items — we have to block it somehow. For this, we need to override convertToAbsoluteDirection method in ItemTouchHelper.
+	
+		public int convertToAbsoluteDirection(int flags, int layoutDirection) {
+			if (swipeBack) {
+				swipeBack = false;
+				return 0;
+			}
+			return super.convertToAbsoluteDirection(flags, layoutDirection);
+		}
+		
+	* 

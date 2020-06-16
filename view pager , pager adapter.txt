@@ -1,0 +1,74 @@
+* view pager: View pager found in Support Library in Android, using view pager we can switch the fragments.
+
+* pager adapter: view pager get control from pager adapter. it have 4 methods:
+
+	instantiateItem(ViewGroup, int): 
+
+in this method we have to inflate the layout which which will represent a page for the given position.
+
+	destroyItem(ViewGroup, int, Object): 
+
+in this method we have to write the code that removes a page from its container for the given position. 
+This method is called while the user navigates through pages. 
+For example if the current position is 0 and the user navigates to the next page, 
+which will be on position 1, at this point, the method is not called. But, 
+when the user goes again to a next page, position 2, at this point, the page from position 0 will be removed. 
+And from now on, whenever the user swipes to a next page the method will be called for the next positions, 1, 2 and so on.
+
+	getCount(): 
+
+here we have to provide the number of pages that the viewPager will have to display. 
+In our case, the size of list containing our images which is 3 🙂
+
+	isViewFromObject(View, Object): 
+
+it is required for a PagerAdapter in order for it to function properly. 
+It checks if Object (the one returned by instantiateItem(ViewGroup, int)) is the same with View.
+
+
+
+
+
+
+
+
+
+
+
+/// Project slider ////
+
+Steps:
+
+1. take a view pager in activity main xml (parent component)
+
+2. create a child component & take imageview in it 
+
+3. create a java model with constructor & getter setter (slidermodel)
+
+4. create a adapter extends pager adapter.
+
+		instantiateItem-> for inflate parent component
+						  find view by id of child component
+		                  by set image resource link between parent & child component
+						  
+		isViewFromObject-> it checked return view is object
+		
+		destroyItem-> it remove the current view.
+		
+		getCount-> return size of the array
+		
+		
+5. create a array list in main activity. 
+
+   create object of slider adapter & pass array
+
+   for page loop create a method pageLooper.	
+
+   now create viewPager onchangeviewlistener. it have 3 method:
+		onPageScrolled
+		onPageSelected
+		onPageScrollStateChanged -> what will happen if scroll . declair here pageLooper method.
+
+   now add child view with that onchangeviewlistener.
+   
+   create method startbannerslideshow-> set here delay time, period time & current item increment

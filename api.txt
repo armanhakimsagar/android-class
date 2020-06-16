@@ -1,3 +1,29 @@
+STEP :
+
+1. Adding Dependencies
+
+2. We need to add Internet permission in our AndroidManifest.xml.
+
+3. create a parent component activity_main.xml
+
+4. create a child component list_item.xml (here set api output design)
+
+5. create a model class for getter setter 
+
+6. create a class named response & create arraylist here. 
+   (link here model with arraylist)
+   
+7. create AsyncTask class. link here api data with response class
+
+8. in MainActivity.java file link AsyncTask class
+
+array with api: https://www.learn2crack.com/2013/11/listview-from-json-example.html
+
+recycle with adapter : https://medium.com/android-grid/how-to-fetch-json-data-using-volley-and-put-it-to-recyclerview-android-studio-383059a12d1e
+
+
+https://medium.com/@ritukanwarshekhawat687/fetch-data-from-json-api-parse-it-and-show-in-custom-listview-using-picasso-library-android-c22a0881b160
+
 * ********************* RAW API FETCH
 
 

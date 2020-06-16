@@ -1,19 +1,429 @@
-* you can not run only java in android studio
-
 * class name must be pascel case PascaleCase & noun
   variable name must be camel case & noun
   method name will be verb & camel case
+
+* must need datatype in variable
   
-* must have a main method & must need return data type type.
+  int modelYear;
+  String modelName;
+  
+  datatype param in method:   public Car(int year, String name)
+  
+* void means it will return nothing
+
+* must have a main method in every class.
+
+
+______________________
+
+
+Main method:
+
+* String[] args : Java main method accepts a single argument of type String array. 
+                  This is also called as java command line arguments.
+				  args its a array.
+				  
+* The signature of main method requires static.
+  static helps to create object of main method.
+  public static void main (String[] args)
+  
+* The main method will always be excecuted first, 
+  because it is a special static method that will be called from Java itself to start an application.
+
+
+	public static int methodName(int a, int b) {
+
+	   // body
+
+	}
+
+	* public static − modifier
+
+	* int − return type
+
+	* methodName − name of the method
+
+	* a, b − formal parameters
+
+	* int a, int b − list of parameters
+
+
+
+______________________
+
+
+Arguments:
+
+* String args[] : A command-line argument is the information that directly follows the program's name 
+				  on the command line when it is executed. To access the command-line arguments inside 
+				  a Java program is quite easy. They are stored as strings in the String array passed 
+				  to main( ).
+
+
+* [...] : They let you pass any number of objects of a specific type 
+
+		  public void PrintWithEllipsis(String...setOfStrings) {
+
+				for (String s : setOfStrings)
+			
+					System.out.println(s);
+
+		  }
+		  
+		  
+	    obj.PrintWithEllipsis(); // prints nothing
+		
+		obj.PrintWithEllipsis("first"); // prints "first"
+		
+		obj.PrintWithEllipsis("first", "second"); // prints "first\nsecond"
+		
+		
+		
+______________________
+
+
+constructor :
+
+* constructor use in java to initialize object in onload
+   
+* A constructor in Java is a special method that is used to initialize objects.
+  Note that the constructor name must match the class name, 
+  and it cannot have a return type (like void)  
+  constructor is called when the object is created.
+  
+* Constructors allow creation of instances of a given Class, 
+  whereas the main method merely allows for a potential entry point for starting your program.
+
+public class Hello {
+
+   String name;
+
+   //Constructor
+
+   Hello(){
+
+      // initialize objects
+
+      this.name = "BeginnersBook.com";
+
+   }
+
+}
+
+
+
+______________________
+
+
+
+
+public class HelloWorld{
+
+     String personName;
+     int roll_number;
+	
+	 // constructor for initialize
+	 
+     HelloWorld(){
+         this.personName = "Arman";
+         this.roll_number = 12;
+     }
+	 
+	 // main method.
+	 
+     public static void main(String []args){
+		
+		// creating object of the class & access in property
+		
+		HelloWorld HelloWorldObj = new HelloWorld();
+        System.out.println(HelloWorldObj.personName);
+		
+     }
+	 
+}
+
+
+
+or
+
+
+ public Puppy(String name) {
+ 
+      // This constructor has one parameter, name.
+      System.out.println("Passed Name is :" + name );
+ 
+ }
+
+ public static void main(String []args) {
+ 
+      // Following statement would create an object myPuppy
+
+      Puppy myPuppy = new Puppy( "tommy" );
+ }
+
+
+______________________
+
+
+Getter Setter concept:
+
+String personName;
+
+public String getpersonName(){
+
+	return personName;
+
+}
+
+public void setpersonName(String name){
+
+	this.personName = name;
+
+}
+
+public static void main(String []args){
+
+	HelloWorld HelloWorldObj = new HelloWorld();
+
+	HelloWorldObj.setpersonName("Jodu");
+
+	System.out.print(HelloWorldObj.getpersonName());
+
+}
+
+
+______________________
+
+
+* you can not run only java in android studio
   
 * Variable name:
 
-  must need encapsulation, datatype & value;
-  
+  must need encapsulation, datatype & variable name then value;
+
   private String personName = "kuddus";
+
+
+______________________
   
   
 * data type: https://www.w3schools.com/java/java_data_types.asp
+
+
+byte : Byte data type is an 8-bit signed two's complement integer.
+       range 0 - 255
+
+short : Short data type is a 16-bit signed two's complement integer.
+        range + 32000 - 32000 . 
+
+char : char data type is a single 16-bit Unicode character.
+       char is unsigned, but does not represent numbers.
+
+int : Int data type is a 32-bit signed two's complement integer.
+	  2 ^ 32
+
+long : Long data type is a 64-bit signed two's complement integer
+       2^64
+
+float : Float data type is a single-precision 32-bit IEEE 754 floating point
+
+double : double data type is a double-precision 64-bit IEEE 754 floating point.
+         double takes more space than float in Java
+	   
+
+
+______________________
+
+
+built in array:
+
+int [] numbers = {10, 20, 30, 40, 50};
+
+for(int x : numbers ) {
+
+  System.out.print( x );
+  System.out.print(",");
+
+}
+
+
+
+Java ArrayList (Resizeable array):
+
+The difference between a built-in array and an ArrayList in Java, is that the size of an array 
+cannot be modified (if you want to add or remove elements to/from an array, you have to create a new one).
+ While elements can be added and removed from an ArrayList whenever you want. The syntax is also slightly.
+
+
+	import java.util.ArrayList; // import the ArrayList class
+
+
+	ArrayList<String> cars = new ArrayList<String>(); // Create an ArrayList object
+
+	structure: ArrayList object (datatype) - array name = new ArrayList class (datatype)
+
+
+Access an Item : cars.get(0);
+
+
+
+
+import java.util.ArrayList;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+         
+         ArrayList<String> newData = new ArrayList<String>();
+         newData.add("jodu");
+         newData.add("modu");
+         
+        System.out.println(newData.get(0));
+     }
+}
+
+
+HashMap :
+
+
+same as array. just you can store value in key pair value. so its used in api.
+
+
+HashMap<String, String> capitalCities = new HashMap<String, String>();
+
+HashMap object (double datatype for key & value) -  HashMap name = HashMap class (double datatype for key & value)
+
+
+import java.util.HashMap;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+         
+         HashMap<String,String> newData = new HashMap<String,String>();
+         newData.put("1","jodu");
+         newData.put("2","modu");
+         
+        System.out.println(newData.get("1"));
+     }
+}
+
+
+HashMap Size : newData.size();
+
+Remove remove : newData.remove("1");
+
+remove all  : newData.clear();
+
+retrive value :
+
+for (String i : newData.keySet()) {
+  System.out.println(i);
+}
+
+
+Push & retrive:
+
+
+HashMap<String,String> newData = new HashMap<String,String>();
+         
+ for (int i = 0; i < 5; i++) {
+	newData.put("key"+i,"jodu");
+ }
+ 
+ for (String i : newData.keySet()) {
+  System.out.println("key: " + i + " value: " + newData.get(i));
+}
+
+______________________
+
+
+Loop :
+
+int x = 10;
+
+while( x < 20 ) {
+  
+  System.out.print("value of x : " + x );
+  x++;
+  System.out.print("\n");
+
+}
+
+
+
+int x = 10;
+
+do {
+
+  System.out.print("value of x : " + x );
+  x++;
+  System.out.print("\n");
+
+}
+while( x < 20 );
+
+
+
+______________________
+
+
+String function:
+
+x.equals(y); // return boolean
+
+Integer x =Integer.valueOf(9); // 9
+
+Double c = Double.valueOf(5); // 5.0
+
+Float a = Float.valueOf("80");  // 80.0         
+
+Integer b = Integer.valueOf("444",16); // 9
+
+Math.ceil(-100.675); // -100.0
+
+String palindrome = "Dot saw I was Tod";
+
+int len = palindrome.length();
+
+toString() method, which is used to convert wrapper objects to strings.
+
+Integer myInt = 100;
+String myString = myInt.toString();
+System.out.println(myString.length());
+
+
+
+______________________
+
+
+Array:
+
+double[] myList = {1.9, 2.9, 3.4, 3.5};
+
+// Print all the array elements
+
+for (int i = 0; i < myList.length; i++) {
+
+    System.out.println(myList[i] + " ");
+
+}
+	  
+	  
+______________________
+	  
+
+Date :
+
+Date dNow = new Date( );
+
+SimpleDateFormat ft =  new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+
+System.out.println("Current Date: " + ft.format(dNow));
+
+
+______________________
+
 
 * static method access by dot, static method can access static variable.
 
@@ -43,3 +453,264 @@
        
      }
   }
+  
+______________________
+
+finalize:
+
+The Java finalize() method is not a destructor and should not be used to handle logic that 
+your application depends on. The Java spec states there is no guarantee that the finalize 
+method is called at all during the livetime of the application.
+
+MyClass myObj;
+
+try {
+    myObj = new MyClass();
+
+    // ...
+} finally {
+
+    if (null != myObj) {
+        myObj.cleanup();
+    }
+}
+
+
+______________________
+
+Stream:
+
+InPutStream − The InputStream is used to read data from a source.
+			  Input Stream can be an input source like disk file.
+
+OutPutStream − The OutputStream is used for writing data to a destination
+
+
+import java.io.*;
+
+in = new FileInputStream("C:/java/hello");
+
+out = new FileOutputStream("output.txt");
+
+
+
+Buffer:
+			  
+Buffer Stream - Buffer is used while reading/writing data. 
+				It need not be used while moving data from one place to another.
+
+
+File file = new File("file.txt");
+
+fileInputStream = new FileInputStream(file);
+
+bufferedInputStream = new BufferedInputStream(fileInputStream);
+
+
+
+
+
+
+______________________
+
+
+Nested class or Inner Classes:
+
+
+
+class Outer_Demo {
+   int num;
+   
+   // inner class
+   private class Inner_Demo {
+      public void print() {
+         System.out.println("This is an inner class");
+      }
+   }
+   
+   // Accessing he inner class from the method within
+   void display_Inner() {
+      Inner_Demo inner = new Inner_Demo();
+      inner.print();
+   }
+}
+   
+public class My_class {
+
+   public static void main(String args[]) {
+      // Instantiating the outer class 
+      Outer_Demo outer = new Outer_Demo();
+      
+      // Accessing the display_Inner() method.
+      outer.display_Inner();
+   }
+}
+
+
+______________________
+
+
+super keyword:
+
+The super keyword is similar to this keyword.
+The super keyword refers to superclass (parent) objects
+
+______________________
+
+
+Overriding & polymorphism:
+
+Both are same.
+
+
+
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+
+______________________
+
+
+Abstract class:
+
+is a restricted class that cannot be used to create objects 
+(to access it, it must be inherited from another class)
+
+Abstract method: 
+
+can only be used in an abstract class, and it does not have a body. 
+The body is provided by the subclass (inherited from).
+
+
+abstract class Animal {
+
+  public abstract void animalSound();
+
+}
+
+// Subclass (inherit from Animal)
+
+class Pig extends Animal {
+
+  public void animalSound() {
+
+    // The body of animalSound() is provided here
+
+    System.out.println("The pig says: wee wee");
+  }
+
+}
+
+
+______________________
+
+interface:
+
+An interface is a completely "abstract class" that is used to group related methods with empty bodies.
+To access the interface methods, the interface must be "implemented" (kinda like inherited) 
+by another class with the implements keyword (instead of extends).
+
+// Interface
+
+interface Animal {
+
+  public void animalSound(); // interface method (does not have a body)
+  public void sleep(); // interface method (does not have a body)
+
+}
+
+// Pig "implements" the Animal interface
+
+class Pig implements Animal {
+
+  public void animalSound() {
+
+    // The body of animalSound() is provided here
+    System.out.println("The pig says: wee wee");
+
+  }
+
+  public void sleep() {
+
+    // The body of sleep() is provided here
+    System.out.println("Zzz");
+
+  }
+
+}
+
+class MyMainClass {
+
+  public static void main(String[] args) {
+
+    Pig myPig = new Pig();  // Create a Pig object
+    myPig.animalSound();
+    myPig.sleep();
+
+  }
+
+}
+
+______________________
+
+enum:
+
+enum is a class that collection of final variable (unchanagle)
+
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+}
+
+You can access enum constants with the dot syntax:
+
+Level myVar = Level.MEDIUM;
+
+
+______________________
+
+Java try and catch :
+
+public class MyClass {
+
+  public static void main(String[ ] args) {
+
+    try {
+      int[] myNumbers = {1, 2, 3};
+      System.out.println(myNumbers[10]);
+    } catch (Exception e) {
+      System.out.println("Something went wrong.");
+    }
+
+  }
+}
+
+
+
+______________________
+
+
+Android studio basic :
+
+
+Activities vs service :
+
+An activity represents a single screen with a user interface.
+A service is a component that runs in the background to perform long-running operations
+

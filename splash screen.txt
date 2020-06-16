@@ -1,0 +1,34 @@
+1. create a new splash screen activity . 
+   it will create a java & xml file.
+   
+2. design your splash screen in xml file.
+
+   take RelativeLayout & set backgound gif file.
+   
+   
+3. now in java file of splash screen. set delay:
+
+   Thread timer = new Thread(){
+		public void run(){
+			try{
+				sleep(3500);
+			}
+			catch(InterruptedException e){
+				e.printStackTrace();
+			} finally {
+				Intent openMain = new Intent(Splash.this, MainActivity.class);
+				
+				// for run splash on intend time
+				
+				startActivity(openMain);
+				
+				// for hide splash
+				
+				finish();
+			}
+		}
+	};
+	timer.start();
+
+
+4. in android menifest set android name="splash screen" for run it on load time

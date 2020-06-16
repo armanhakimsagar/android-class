@@ -1,2 +1,14 @@
 https://codinginflow.com/tutorials/android/bottomnavigationview
 
+1. view pager in activity_main.xml -> 
+						
+					->main activity create pager adapter. 
+					  now set adapter activity_main id with fragement pager adapter
+					
+					->now create different layout for all fragement.
+					
+					->create fragement pager adapter .
+					     set switch case in get item.
+						 create object layout of the fragement & return it
+						 
+					

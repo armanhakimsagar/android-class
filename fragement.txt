@@ -1,3 +1,121 @@
+
+cycle :
+
+*** Create parent component & declair fragement (this is link between parent & child):
+
+<fragment
+        android:id="@+id/fragment1"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />
+
+
+*** Child component : : 
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5DC"
+    tools:context=".Fragment1">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
+
+
+
+** java fragement file (inflate here Child view for fragement) :
+
+public View onCreateView(LayoutInflater inflater, ViewGroup container,  
+                             Bundle savedInstanceState) { 
+							 
+	return inflater.inflate(R.layout.fragment_fragment1, container, false);  
+	
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+Fragement: it's partial activity. it can not run separetly, 
+		   its need a main activity.
+           it use to make single activity for multiple use, 
+		   like tab view & mobile view in same activity.
+		   it make app smooth & flexible.
+		   helps to create popuup, tab view.
+		   you can create fragement as much you want.
+		   
+		   
+
+		 its have 6 built in methods.
+		 
+			onAttached - it use to connect with parent activity.
+			
+			on create - use to inflate fragement.
+			
+			on create view - use to set interface. here child view inflate fragement.
+			
+			on activity create - it infalte parent activity.
+
+			on start - visible view on user & user can use it.
+			
+			on resume - it call when focus or app in background.
+
+Child view (View layout for fragement) :
+
+
+
+
+
+	-> link java file of this fragement in name attribute in child component
+	   (in this java file call all method of fragement)
+	
+	-> in java file inflate child view with Child component.
+
+	-> now in main activity link with this java file by
+	   get support fragement manager.
+		
+OR directly 
+
+	-> create fragement file layout (it will auto create Child component, java file,Child view)
+	
+	-> others thing same as before
+	
+	
+ 
+1. fragement adapter ->
+				
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+project::::::::::::::::::::
+
 Top floating menu:
 
 1. create a menu:

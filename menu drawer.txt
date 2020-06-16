@@ -1,0 +1,112 @@
+https://codinginflow.com/tutorials/android/navigation-drawer/part-3-fragments
+
+
+Lifecircle :
+
+* Parent component -> drawer layout (popup box in left side)
+
+* child component -> menu item , header (in menu folder), toolbar layout (for top left icon)
+
+* link all child component in parent component.
+
+* in java initialize parent component with this methods:
+
+	in onCreate method ->   1. setSupportActionBar(toolbar) 		[for toolbar declair]
+	
+							2. new ActionBarDrawerToggle()  		[for drawer layout call]
+	
+							3. setNavigationItemSelectedListener 	[for onclick response item]
+							
+							
+	in onBackPressed method -> onBackPress operation
+	
+	
+
+_________________________
+
+
+
+* menu from sctrach : https://www.journaldev.com/9958/android-navigation-drawer-example-tutorial
+
+* menu create from android option : https://www.androidhive.info/2013/11/android-sliding-menu-using-navigation-drawer/
+
+* drop down menu (expandablelistview) : https://www.journaldev.com/19375/android-expandablelistview-navigationview
+
+* navigation drawer android right to left
+
+* pop up dialoge:
+
+* volly in fragement mwnu
+
+* bottom menu with volly
+
+
+
+_________________________
+
+
+explain:
+
+* toolbar :
+
+In order to slide our navigation drawer over the ActionBar, we need to use the new Toolbar widget as defined in the AndroidX library.
+The ActionBar displayed at the top.
+ 
+
+* ActionBarDrawerToggle : 
+
+The ActionBarDrawerToggle sets up the app icon located on the left of the action bar or toolbar to open and close the navigation drawer. 
+
+* Drawer widget : 
+
+DrawerLayout acts as a top-level container for window content that allows for interactive "drawer" views to be pulled 
+out from one or both vertical edges of the window.
+
+tools:openDrawer="start" property is used to display the navigation drawer when the XML layout is open in Android Studio design view.
+
+* Navigation view :
+
+NavigationView is generally placed inside a DrawerLayout.
+Its use to inflate menu item
+
+* HeaderView :
+
+ This View is typically displayed at the top of the Navigation Drawer.
+ This view is defined in a separate layout
+ the app:headerLayout parameter is used
+ 
+ 
+ * Menu : 
+ 
+ This is displayed below the HeaderView and it contains all the navigation items in the form of a list.
+ app:menus parameter is used
+ 
+ 
+ * CoordinatorLayout :
+ 
+ CoordinatorLayout that holds a ToolBar, a FloatingActionButton and a on_load_view.xml layout
+ This is layout which hold top left floating button, on load view page
+ 
+ * MainActivity:
+ 
+The MainActivity implements NavigationView.OnNavigationItemSelectedListener and overrides the method onNavigationItemSelected. 
+We handle the menu item clicks here and close the Drawer towards the left. 
+
+* toggle.syncState() sync state: 
+
+will synchronise the icon’s state and display the hamburger icon or back arrow depending on whether the drawer is closed or open. 
+Omitting this line of code won’t change the back arrow to the hamburger icon when the drawer is closed. 
+ 
+* drawer.closeDrawer(GravityCompat.START) direction state : 
+
+is used to close the drawer by setting the gravity to START(left by default)
+
+_________________________
+
+
+steps : https://guides.codepath.com/android/fragment-navigation-drawer
+
+1. 
+
+drawer_view : 
+
